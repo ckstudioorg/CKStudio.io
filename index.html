@@ -2,52 +2,169 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CK Studio — Post‑Production & Creative</title>
-  <meta name="description" content="CK Studio — Post-production, movie publicity, commercials, lyrical videos, corporate films and creative design." />
-  <meta name="theme-color" content="#0f172a" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CK Studio — Post‑Production • Publicity • Creative</title>
+  <meta name="description" content="CK Studio — Post‑production, movie publicity, commercials, lyrical videos, corporate films and creative design. Hyderabad, India." />
+  <meta name="theme-color" content="#000000" />
+  <meta name="color-scheme" content="dark light" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
   <style>
-    body {margin:0;font-family:Arial,Helvetica,sans-serif;background:#071029;color:#fff;line-height:1.5;text-align:center;padding:40px;}
-    header{margin-bottom:30px;}
-    h1{font-size:40px;margin-bottom:10px;}
-    h2{margin-top:30px;}
-    a{color:#0ea5a3;text-decoration:none;}
-    section{margin:40px auto;max-width:800px;}
-    footer{margin-top:60px;font-size:14px;color:#aaa;}
-    .btn{display:inline-block;background:#0ea5a3;color:#021;padding:10px 18px;border-radius:8px;font-weight:bold;margin-top:10px;}
+    :root{
+      --red:#E10600; --gold:#C9A227; --black:#0A0A0B; --white:#FFFFFF;
+      --ink:#0E0E10; --muted:#9CA3AF; --card:#111114; --edge:#1C1C20;
+      --accent: var(--red);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      background: radial-gradient(1200px 800px at 80% -10%, rgba(233,6,0,0.15), transparent 60%),
+                  radial-gradient(1000px 700px at -10% 120%, rgba(201,162,39,0.18), transparent 60%),
+                  linear-gradient(180deg, #0A0A0B 0%, #0E0E12 100%);
+      color:var(--white); line-height:1.6;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:var(--white); text-decoration:none}
+    .btn{display:inline-block; padding:.85rem 1.25rem; border-radius:12px; font-weight:700; letter-spacing:.3px; transition:transform .25s ease, box-shadow .25s ease, background .25s ease}
+    .btn-primary{background:linear-gradient(135deg,var(--red),#ff3b2f); box-shadow:0 8px 24px rgba(225,6,0,.35)}
+    .btn-primary:hover{transform:translateY(-2px); box-shadow:0 14px 36px rgba(225,6,0,.45)}
+    .btn-ghost{border:1px solid var(--edge); background:rgba(255,255,255,0.02)}
+
+    header.site{
+      position:sticky; top:0; z-index:50; background:rgba(10,10,11,.55); backdrop-filter: blur(8px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{max-width:1200px; margin:0 auto; padding:.75rem 1rem; display:flex; align-items:center; gap:1rem}
+    .brand{display:flex; align-items:center; gap:.65rem; font-weight:900; letter-spacing:.4px}
+    .brand .logo{width:34px; height:34px; border-radius:8px; background:conic-gradient(from 210deg at 50% 50%, var(--red), var(--gold), var(--red)); box-shadow:0 10px 22px rgba(201,162,39,.25), inset 0 0 24px rgba(225,6,0,.35)}
+    .spacer{flex:1}
+    .nav a{opacity:.9}
+
+    .hero{position:relative; max-width:1200px; margin:0 auto; padding:8rem 1rem 5rem; display:grid; grid-template-columns:1.2fr .8fr; gap:2.5rem}
+    .badge{display:inline-flex; align-items:center; gap:.5rem; padding:.35rem .6rem; border-radius:999px; font-size:.8rem; color:#111; background:linear-gradient(135deg,#fff,#f7f7f7)}
+    .badge i{width:.6rem; height:.6rem; border-radius:50%; background:var(--red); box-shadow:0 0 0 4px rgba(225,6,0,.2)}
+    h1.title{font-size:clamp(2.2rem, 2.5vw + 1rem, 4rem); line-height:1.1; margin:.75rem 0 1rem; font-weight:900}
+    .title em{color:var(--gold); font-style:normal; text-shadow:0 6px 18px rgba(201,162,39,.35)}
+    .lead{color:var(--muted); font-size:1.05rem; max-width:52ch}
+    .cta{display:flex; gap:.8rem; margin-top:1.4rem; flex-wrap:wrap}
+
+    .reel{position:relative; border-radius:16px; overflow:hidden; background:var(--card); border:1px solid var(--edge); min-height:300px}
+    .reel .frame{position:absolute; inset:0; background: radial-gradient(800px 400px at -10% 110%, rgba(225,6,0,.18), transparent 60%),
+                                           radial-gradient(900px 420px at 110% -10%, rgba(201,162,39,.18), transparent 60%)}
+    .reel .poster{position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1400&auto=format&fit=crop') center/cover; opacity:.4; filter:grayscale(30%)}
+    .reel .play{position:absolute; inset:auto auto 16px 16px}
+
+    .section{max-width:1200px; margin:0 auto; padding:4rem 1rem}
+    .grid{display:grid; gap:1.25rem}
+    .services{grid-template-columns:repeat(4,1fr)}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid var(--edge); border-radius:16px; padding:1.25rem; min-height:160px; position:relative; overflow:hidden}
+    .card h3{margin:0 0 .25rem; font-size:1.05rem}
+    .card p{margin:0; color:var(--muted); font-size:.95rem}
+    .card:before{content:""; position:absolute; inset:auto auto -40px -40px; width:120px; height:120px; background:radial-gradient(closest-side, rgba(201,162,39,.35), transparent); transform:rotate(25deg)}
+
+    .about{display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:center}
+    .about .block{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid var(--edge); border-radius:16px; padding:1.5rem}
+
+    footer{border-top:1px solid rgba(255,255,255,.06); background:#0A0A0B}
+    .foot{max-width:1200px; margin:0 auto; padding:2rem 1rem; display:flex; gap:1rem; align-items:center}
+    .foot .spacer{flex:1}
+    .social a{opacity:.8; margin-right:.65rem}
+
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr; padding-top:6rem}
+      .services{grid-template-columns:1fr 1fr}
+      .about{grid-template-columns:1fr}
+    }
+    @media (max-width: 560px){
+      .services{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>CK Studio</h1>
-    <p>Post‑Production • Publicity • Creative Studio</p>
+  <header class="site">
+    <nav class="nav">
+      <div class="brand"><span class="logo" aria-hidden="true"></span><span>CK Studio</span></div>
+      <div class="spacer"></div>
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="btn btn-ghost">Contact</a>
+    </nav>
   </header>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>We craft cinematic experiences — from edit to color, from publicity to delivery. Based in Hyderabad, CK Studio offers complete post‑production, movie publicity, and creative design solutions for films, brands, and businesses.</p>
-  </section>
+  <main>
+    <section class="hero">
+      <div>
+        <span class="badge"><i></i><strong>Premium</strong> Post‑Production & Creative</span>
+        <h1 class="title">Cinematic finishing, publicity and design crafted for <em>impact</em>.</h1>
+        <p class="lead">We are a Hyderabad‑based studio delivering high‑end post, stunning publicity, and memorable brand visuals for films, TVCs, music and corporate stories.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="mailto:ckstudio.org@gmail.com?subject=Project%20Inquiry%20—%20CK%20Studio">Start a project</a>
+          <a class="btn btn-ghost" href="#services">Explore services</a>
+        </div>
+      </div>
+      <div class="reel" aria-label="Showreel preview">
+        <div class="poster" aria-hidden="true"></div>
+        <div class="frame" aria-hidden="true"></div>
+        <div class="play">
+          <a class="btn btn-primary" href="https://drive.google.com" target="_blank" rel="noopener">Play showreel</a>
+        </div>
+      </div>
+    </section>
 
-  <section id="services">
-    <h2>Services</h2>
-    <ul style="list-style:none;padding:0">
-      <li>🎬 Feature Films & Publicity Design</li>
-      <li>📺 Commercials & TVC Finishing</li>
-      <li>🎵 Lyrical & Music Video Edits</li>
-      <li>🏢 Corporate Films & Documentaries</li>
-    </ul>
-  </section>
+    <section id="services" class="section">
+      <h2>Services</h2>
+      <div class="grid services">
+        <article class="card"><h3>🎬 Film Publicity</h3><p>Key art, posters, title design, and campaign toolkits.</p></article>
+        <article class="card"><h3>🎛️ Post‑Production</h3><p>Editorial, color finishing, online & mastering for every screen.</p></article>
+        <article class="card"><h3>🎵 Music & Lyricals</h3><p>Rhythm‑tight edits, typography and kinetic layouts.</p></article>
+        <article class="card"><h3>🏢 Corporate & Brand</h3><p>Launch films, explainers, product showcases and promos.</p></article>
+      </div>
+    </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>📍 Hyderabad, India</p>
-    <p>☎ +91 9700970762</p>
-    <p>✉ ckstudio.org@gmail.com</p>
-    <p><a class="btn" href="mailto:ckstudio.org@gmail.com">Email Us</a></p>
-  </section>
+    <section id="about" class="section about">
+      <div>
+        <h2>About</h2>
+        <p>CK Studio crafts cinematic experiences—from editorial to color, from publicity to delivery. We partner with producers, directors and brands to create visuals that move audiences and grow business.</p>
+        <p><strong>Based in Hyderabad, India.</strong> Available worldwide.</p>
+      </div>
+      <div class="block">
+        <h3>Capabilities</h3>
+        <ul>
+          <li>Story‑driven offline/online edit</li>
+          <li>Grade and finishing</li>
+          <li>Design systems for campaigns</li>
+          <li>On‑brand motion graphics</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>📍 Hyderabad, India</p>
+      <p>☎ +91 9700970762</p>
+      <p>✉ <a href="mailto:ckstudio.org@gmail.com">ckstudio.org@gmail.com</a></p>
+      <div class="cta">
+        <a class="btn btn-primary" href="mailto:ckstudio.org@gmail.com?subject=Project%20Inquiry%20—%20CK%20Studio">Email us</a>
+        <a class="btn btn-ghost" href="tel:+919700970762">Call now</a>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© <span id="year"></span> CK Studio — All Rights Reserved</p>
+    <div class="foot">
+      <div class="brand"><span class="logo" aria-hidden="true"></span><span>CK Studio</span></div>
+      <div class="spacer"></div>
+      <div class="social">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="YouTube">YouTube</a>
+        <a href="#" aria-label="X / Twitter">X</a>
+      </div>
+      <div class="spacer"></div>
+      <small>© <span id="year"></span> CK Studio. All rights reserved.</small>
+    </div>
   </footer>
 
   <script>
