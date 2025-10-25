@@ -42,7 +42,7 @@ const Contact: React.FC = () => {
                     </div>
                 </div>
                  <div className="flex flex-col items-center justify-center space-y-4">
-                     <img src="https://picsum.photos/seed/globe/300/300" alt="Globe" className="rounded-full w-48 h-48 object-cover border-4 border-red-800/50" />
+                     <img src="https://picsum.photos/seed/connect/300/300" alt="Global Connection" className="rounded-full w-48 h-48 object-cover border-4 border-red-800/50" />
                      <div className="flex space-x-6 mt-6">
                          {socialLinks.map(({ Icon, href, name }) => (
                             <a key={name} href={href} target="_blank" rel="noopener noreferrer" aria-label={name} className="text-gray-400 hover:text-red-500 transition-colors">

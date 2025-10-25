@@ -44,14 +44,17 @@ const Portfolio: React.FC = () => {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                 {imagesToShow.map((src, index) => (
-                    <div key={index} className="group aspect-w-4 aspect-h-3 overflow-hidden rounded-lg shadow-lg">
+                    <div key={index} className="group aspect-w-4 aspect-h-3 overflow-hidden rounded-lg shadow-lg cursor-pointer">
                         <img 
                             src={src} 
-                            alt={`${activeTab} project ${index + 1}`} 
+                            alt={`Screenshot from ${activeTab} project ${index + 1}`} 
                             className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 ease-in-out"
                         />
-                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <p className="text-white text-lg font-bold">View Project</p>
+                        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-center p-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white mb-2 transform group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                            <p className="text-white text-base font-bold tracking-wider uppercase">View Project</p>
                         </div>
                     </div>
                 ))}

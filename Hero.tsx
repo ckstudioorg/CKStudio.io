@@ -5,7 +5,14 @@ const Hero: React.FC = () => {
     return (
         <section className="h-screen flex flex-col justify-center items-center text-center relative bg-gradient-to-b from-black via-red-900/30 to-black">
             <div className="absolute inset-0 bg-black opacity-50"></div>
-             <video autoPlay loop muted playsInline className="absolute z-0 w-full h-full object-cover opacity-10">
+             <video 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+                className="absolute z-0 w-full h-full object-cover opacity-10"
+                poster="https://picsum.photos/seed/cinema/1920/1080"
+            >
                 <source src="https://assets.mixkit.co/videos/preview/mixkit-vintage-movie-projector-1286-large.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>

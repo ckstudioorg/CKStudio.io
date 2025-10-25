@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import Header from './Header';
 import Hero from './Hero';
@@ -12,7 +13,6 @@ import Footer from './Footer';
 
 const App: React.FC = () => {
     const [activeSection, setActiveSection] = useState<string>('home');
-    
     const sectionRefs = {
         home: useRef<HTMLDivElement>(null),
         about: useRef<HTMLDivElement>(null),
@@ -49,28 +49,19 @@ const App: React.FC = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+
     return (
-        <div className="min-h-screen bg-black text-white selection:bg-red-700 selection:text-white">
+        <div className="bg-black text-white selection:bg-red-700 selection:text-white">
             <Header activeSection={activeSection} />
-            <main className="relative">
-                <div id="home" ref={sectionRefs.home}>
-                    <Hero />
-                </div>
-                <div id="about" ref={sectionRefs.about}>
-                    <About />
-                    <VisionMission />
-                </div>
-                <div id="services" ref={sectionRefs.services}>
-                    <Services />
-                    <WhyUs />
-                </div>
-                <div id="portfolio" ref={sectionRefs.portfolio}>
-                    <Portfolio />
-                    <Clients />
-                </div>
-                <div id="contact" ref={sectionRefs.contact}>
-                    <Contact />
-                </div>
+            <main>
+                <div id="home" ref={sectionRefs.home}><Hero /></div>
+                <div id="about" ref={sectionRefs.about}><About /></div>
+                <VisionMission />
+                <div id="services" ref={sectionRefs.services}><Services /></div>
+                <WhyUs />
+                <div id="portfolio" ref={sectionRefs.portfolio}><Portfolio /></div>
+                <Clients />
+                <div id="contact" ref={sectionRefs.contact}><Contact /></div>
             </main>
             <Footer />
         </div>

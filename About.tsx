@@ -18,7 +18,7 @@ const About: React.FC = () => {
                     </p>
                 </div>
                 <div className="flex justify-center">
-                    <img src="https://picsum.photos/seed/tree/500/600" alt="Creative Tree" className="rounded-lg shadow-2xl shadow-red-900/30 object-cover w-full max-w-sm" />
+                    <img src="https://picsum.photos/seed/filmset/500/600" alt="CK Studio Film Set" className="rounded-lg shadow-2xl shadow-red-900/30 object-cover w-full max-w-sm" />
                 </div>
             </div>
             <div className="mt-20 text-center">
